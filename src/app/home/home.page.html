@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title size="large">
+      BMI Calculator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+
+ 
+    <h2>Enjoy your Life!</h2>
+
+    <ion-avatar class="bmi-logo">
+      <img src="assets/bmi-logo.png" alt="BMI" width="35%">
+    </ion-avatar>
+    
+
+    <ion-item class="subtitle ion-align-items-center" lines="none">
+      <p>Enter your info below to get started:</p>
+    </ion-item>
+   
+
+    <ion-item>
+      <ion-label position="floating">Weight (kg)</ion-label>
+      <ion-input [(ngModel)]="weight"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Height (cm)</ion-label>
+      <ion-input [(ngModel)]="height"></ion-input>
+    </ion-item>
+
+    <ion-button class="bmi-button" color="warning" expand="block" (click)= "calculateBMI()">Calculate BMI</ion-button>
+    <ion-button color="danger" (click)= "reset()">Reset</ion-button>
+    <h2 *ngIf="bmi">You BMI is {{bmi}}</h2>
+   
+
+  </div>
+</ion-content>
